@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>View Student Details</title>
+</head>
+<body>
+	<center><table border="2">
+		<h1> Student Details</h1>
+		<tr>
+			<th>Name</th>
+            <th>Register Number</th>
+			<th>Roll Number</th>
+            <th>Phone</th>
+            <th>Password</th>
+		</tr>
+        {% for i in stval %}
+		<tr>
+			<td>{{ i.name }}</td>
+			<td>{{ i.reg_no }}</td>
+            <td>{{ i.roll_no }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.password }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+	</center>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Issued Details</title>
+</head>
+<body>
+	<center><table border="2">
+		<h1>Issued Details</h1>
+		<tr>
+			<th>Book ID</th>
+			<th>Book Name</th>
+			<th>Author</th>
+			<th>Edition</th>
+			<th>Price</th>
+			<th>Publication</th>
+			<th>Pages</th>
+			<th>Subject</th>
+		</tr>
+        {% for i in retval %}
+		<tr>
+			<td>{{ i.book_id }}</td>
+			<td>{{ i.name }}</td>
+			<td>{{ i.author }}</td>
+			<td>{{ i.edition }}</td>
+			<td>{{ i.price }}</td>
+			<td>{{ i.publication }}</td>
+			<td>{{ i.pages }}</td>
+			<td>{{ i.subject }}</td>
+			<td>
+				<a href="">Return</a>
+			</td>	
+		</tr>
+        {% endfor %}
+	</table>
+	</center>
+</body>
+</html>

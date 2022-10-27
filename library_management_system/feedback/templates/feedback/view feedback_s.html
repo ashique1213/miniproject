@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>View feedback</title>
+</head>
+<body>
+	<center><table border="2">
+		<h1>Feedback student</h1>
+		<tr>
+			<th>Feedback</th>
+            <th>Date</th>
+		</tr>
+        {% for i in fdval %}
+		<tr>
+			<td>{{ i.feedback }}</td>
+			<td>{{ i.date }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+	</center>
+</body>
+</html>

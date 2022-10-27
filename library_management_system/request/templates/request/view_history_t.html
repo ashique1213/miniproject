@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>View History</title>
+</head>
+<body>
+	<center><table border="2">
+		<h1>HISTORY</h1>
+		<tr>
+			<th>Book Name</th>
+            <th>Date</th>
+		</tr>
+        {% for i in hssval %}
+		<tr>
+			<td>{{ i.b.name }}</td>
+			<td>{{ i.request_date }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+	</center>
+</body>
+</html>

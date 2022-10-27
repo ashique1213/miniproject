@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>View Teacher Details</title>
+</head>
+<body>
+	<center><table border="2">
+		<h1> Teacher Details</h1>
+		<tr>
+			<th>Name</th>
+            <th>Teacher ID</th>
+            <th>Phone</th>
+            <th>Password</th>
+		</tr>
+        {% for i in theval %}
+		<tr>
+			<td>{{ i.name}}</td>
+            <td>{{ i.staff_id }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.password }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+	</center>
+</body>
+</html>
