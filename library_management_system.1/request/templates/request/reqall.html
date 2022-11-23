@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>View History</title>
+</head>
+{% extends 'temp/home_admin.html' %}
+{% block base %}
+    <style>
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  width: 70%;
+}
+    th{
+    background-color:#252B34;
+    }
+</style>
+<body>
+	<center><table border="2">
+		<h1>HISTORY</h1>
+		<tr>
+            <th>U_id</th>
+            <th>B_id</th>
+			<th>Book Name</th>
+            <th>Date</th>
+            <th>Status</th>
+
+		</tr>
+        {% for i in hsval  %}
+		<tr>
+        <td><font color="#000000">{{ i.u_id }}</font></td>
+            <td><font color="#000000">{{ i.b_id }}</font></td>
+			<td><font color="#000000">{{ i.b.name }}</font></td>
+			<td><font color="#000000">{{ i.request_date }}</font></td>
+        <td><font color="#000000">{{ i.status }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+	</center>
+</body>
+</html>
+{% endblock %}

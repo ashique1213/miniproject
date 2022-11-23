@@ -1,0 +1,49 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<meta charset="utf-8">#}
+{#	<title>Request Details</title>#}
+{#</head>#}
+{% extends 'temp/home_admin.html' %}
+{% block base %}
+    <style>
+table, th, td {
+  border: 1px solid;
+}
+table {
+  width: 70%;
+}
+    th{
+    background-color:#252B34;
+    }
+</style>
+<body>
+	<center><table border="2">
+		<h1>Request Details</h1>
+		<tr>
+			<th>Book Name</th>
+			<th>U_id</th>
+			<th>Date</th>
+			<th>Status</th>
+            <th>--</th>
+            <th>--</th>
+		</tr>
+        {% for i in ad %}
+		<tr>
+			<td><font color="#000000">{{ i.b.name}}</font></td>
+			<td><font color="#000000">{{ i.u_id }}</font></td>
+			<td><font color="#000000">{{ i.request_date }}</font></td>
+			<td><font color="#000000">{{ i.status }}</font></td>
+			<td>
+				<a href="{% url 'ris' idd=i.request_id %}">Issue</a>
+			</td>	
+			<td>
+				<a href="{% url 'rrg' idd=i.request_id %}">Reject</a>
+			</td>	
+		</tr>
+        {% endfor %}
+	</table>
+	</center>
+</body>
+</html>
+{% endblock %}

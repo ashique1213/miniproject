@@ -1,0 +1,62 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title>LOGIN</title>#}
+{#</head>#}
+{% extends 'temp/home_index.html' %}
+{% block base %}
+     <style>
+input[type=text], select {
+  width: 300px;
+  padding: 8px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=password], select {
+  width: 300px;
+  padding: 8px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 20px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+</style>
+<center>
+<body>
+	<center><h1>LOGIN</h1></center>
+	<form method="post">
+        {% csrf_token %}
+               <font color="#000000"> <input type="text" name="name" placeholder="Name" required></font><br>
+               <font color="#000000"> <input type="Password" name="psw" placeholder="DDMMYY" required></font>
+            <tr>
+				<td></td>
+				<td><font color="#000000"><input type="submit" name="submit" value="LOGIN"></font></td>
+			</tr>
+	</form>
+{% if msg %}
+<script>
+    alert("Login Failed")
+</script>
+{% endif %}
+
+</body>
+    </center>
+</html>
+
+{% endblock %}
+
