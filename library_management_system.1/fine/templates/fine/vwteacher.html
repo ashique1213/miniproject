@@ -1,0 +1,66 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<meta charset="utf-8">#}
+{#	<title>View Teacher Details</title>#}
+{#</head>#}
+{% extends 'temp/home_admin.html' %}
+{% block base %}
+    <style>
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  width: 70%;
+}
+input[type=text], select {
+  width: 300px;
+  padding: 8px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 20px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+    th{
+    background-color:#252B34;
+    }
+</style>
+<body>
+	<center><table border="2">
+		<h1> Teacher Details</h1>
+		<tr>
+            <th>U_id</th>
+			<th>Name</th>
+            <th>Teacher ID</th>
+            <th>Phone</th>
+            <th>Password</th>
+            <th>--</th>
+		</tr>
+        {% for i in theval %}
+		<tr>
+            <td><font color="#000000">{{ i.t_id}}</font></td>
+            <td><font color="#000000">{{ i.name}}</font></td>
+            <td><font color="#000000">{{ i.staff_id }}</font></td>
+            <td><font color="#000000">{{ i.phone }}</font></td>
+            <td><font color="#000000">{{ i.password }}</font></td>
+            <td><a href="/fined/amtt/{{ i.t_id }}">add fine</a> </td>
+		</tr>
+        {% endfor %}
+	</table>
+	</center>
+</body>
+</html>
+{% endblock %}

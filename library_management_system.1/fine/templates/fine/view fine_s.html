@@ -1,0 +1,39 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<meta charset="utf-8">#}
+{#	<title>View fine</title>#}
+{#</head>#}
+{% extends 'temp/home_stud.html' %}
+{% block base %}
+    <style>
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  width: 70%;
+}
+    th{
+    background-color:#252B34;
+    }
+</style>
+
+<body>
+	<center><table border="2">
+		<h1>FINE</h1>
+		<tr>
+			<th>Fine</th>
+            <th>Date</th>
+		</tr>
+        {% for i in obval%}
+		<tr>
+			<td><font color="#000000">{{ i.fine }}</font></td>
+			<td><font color="#000000">{{ i.date }}</font></td>
+		</tr>
+        {% endfor %}
+	</table>
+	</center>
+</body>
+</html>
+{% endblock %}

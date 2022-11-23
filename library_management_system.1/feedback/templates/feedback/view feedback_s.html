@@ -1,0 +1,40 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<meta charset="utf-8">#}
+{#	<title>View feedback</title>#}
+{#</head>#}
+{% extends 'temp/home_admin.html' %}
+{% block base %}
+    <style>
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  width: 70%;
+}
+    th{
+    background-color:#252B34;
+    }
+</style>
+<body>
+	<center><table border="2">
+		<h1>Feedback</h1>
+		<tr>
+            <th>User</th>
+			<th>Feedback</th>
+            <th>Date</th>
+		</tr>
+        {% for i in fdval %}
+		<tr>
+            <td><font color="#000000">{{ i.stud_id }}</font></td>
+			<td><font color="#000000">{{ i.feedback }}</font></td>
+			<td><font color="#000000">{{ i.date }}</font></td>
+		</tr>
+        {% endfor %}
+	</table>
+	</center>
+</body>
+</html>
+{% endblock %}

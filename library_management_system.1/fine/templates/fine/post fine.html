@@ -1,0 +1,38 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title>FINE</title>#}
+{#</head>#}
+{% extends 'temp/home_admin.html' %}
+{% block base %}
+    <style>
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  width: 70%;
+}
+th{
+    background-color:#252B34;
+    }
+</style>
+<body>
+	<center><h1>FINE</h1></center>
+	<form method="post">
+        {% csrf_token %}
+		<table align="center">
+			<tr>
+				<th>Type:</th>
+				<td>
+                    <a href="/fined/stdlist/"> Student</a>
+                    <a href="/fined/tchlist"> Teacher</a>
+				</td>
+			</tr>
+
+		</table>
+	</form>
+</body>
+</html>
+{% endblock %}
+

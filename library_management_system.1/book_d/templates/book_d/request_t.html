@@ -1,0 +1,86 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<meta charset="utf-8">#}
+{#	<title>Book Details</title>#}
+{#</head>#}
+{% extends 'temp/home_teach.html' %}
+{% block base %}
+    <style>
+table, th, td {
+  border: 1px solid;
+}
+input [type=submit] {
+    width: 400px;
+}
+input[type=text], select {
+  width: 300px;
+  padding: 8px 20px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 20px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+table {
+  width: 70%;
+}
+}
+th{
+    background-color:#252B34;
+    }
+</style>
+<body>
+<center>
+        <form method="post">
+            {% csrf_token %}
+            <td><font color="#000000"><input type="text" name="lop"></font></td><br>
+            <td><font color="#000000"><input type="submit" name="search" value="search" class="search-label-icon"></font></td>
+        </form>
+</center>
+	<center><table border="2">
+		<h1>Book Details</h1>
+		<tr>
+			<th>Book ID</th>
+			<th>Book Name</th>
+			<th>Author</th>
+			<th>Edition</th>
+			<th>Price</th>
+			<th>Publication</th>
+{#			<th>Pages</th>#}
+{#			<th>Subject</th>#}
+            <th>Status</th>
+            <th>--</th>
+		</tr>
+        {% for i in reval %}
+		<tr>
+			<td><font color="#000000">{{ i.book_id }}</font></td>
+			<td><font color="#000000">{{ i.name }}</font></td>
+			<td><font color="#000000">{{ i.author }}</font></td>
+			<td><font color="#000000">{{ i.edition }}</font></td>
+			<td><font color="#000000">{{ i.price }}</font></td>
+			<td><font color="#000000">{{ i.publication }}</font></td>
+{#			<td><font color="#000000">{{ i.pages }}</font></td>#}
+{#			<td><font color="#000000">{{ i.subject }}</font></td>#}
+            <td><font color="#000000">{{ i.status }}</font></td>
+
+			<td>
+				<a href="{% url 'rqq' idd=i.b_id %}">Request</a>
+			</td>	
+		</tr>
+         {% endfor %}
+	</table>
+	</center>
+</body>
+</html>
+{% endblock %}
